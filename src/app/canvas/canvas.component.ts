@@ -1,39 +1,34 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Observable, Subscription } from 'rxjs';
+import { POSTS } from './../mock-posts';
+import { PostsService } from './../posts.service';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-canvas',
   templateUrl: './canvas.component.html',
-  styleUrls: ['./canvas.component.css']
+  styleUrls: ['./canvas.component.css'],
+  providers: [PostsService]
 })
-export class CanvasComponent implements OnInit, OnDestroy {
+export class CanvasComponent implements OnInit {
+
+  posts = POSTS
 
   
 
-  posts = [
-    {
-      title: "Post 1",
-      text: "Some text lalala ududu",
-      img: "https://i.ytimg.com/vi/Vpc9W9AxDtc/maxresdefault.jpg",
-      link: "https://www.youtube.com/watch?v=lt8x3bcuq7k"
-    },
-    {
-      title: "Post 2",
-      text: "Some text lalala ududu ua ua ua",
-      img: "",
-      link: "https://hackerthemes.com/bootstrap-cheatsheet/#input-group"
-    },
-   
-  ]
+  
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
+    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
+    //Add 'implements OnInit' to the class.
 
-  }
 
-  ngOnDestroy() {
-
+    for(var i = 0; i<this.posts.length; i++) {
+      var temporaryText = this.posts[i].text
+      if(temporaryText.length>100){
+        this.posts[i].text = temporaryText.slice(0,100)+"..."
+      }
+    }
   }
 
 }

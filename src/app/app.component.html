@@ -1,6 +1,5 @@
-<!--The content below is only a placeholder and can be replaced.-->
-
 <app-navbar></app-navbar>
 <div class="container">
-  <app-canvas></app-canvas>
+  <router-outlet></router-outlet>
 </div>
+<div *ngFor="let post of posts">{{post.title}}</div>

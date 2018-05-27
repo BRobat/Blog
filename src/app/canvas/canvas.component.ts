@@ -1,6 +1,7 @@
 import { POSTS } from './../mock-posts';
 import { PostsService } from './../posts.service';
 import { Component, OnInit } from '@angular/core';
+import { AngularFireDatabase} from 'angularfire2/database';
 
 @Component({
   selector: 'app-canvas',
@@ -9,24 +10,28 @@ import { Component, OnInit } from '@angular/core';
   providers: [PostsService]
 })
 export class CanvasComponent implements OnInit {
-
-  posts = POSTS
-
   
 
-  
+  posts: any[]
 
-  constructor() { }
+  constructor(db: AngularFireDatabase) {
+    db.list('/Posts')
+    .valueChanges()
+    .subscribe(posts => {
+      this.posts = posts
+      console.log(this.posts)
+    })
+    
+
+  }
 
   ngOnInit(): void {
-    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-    //Add 'implements OnInit' to the class.
 
-
+    // string cutter
     for(var i = 0; i<this.posts.length; i++) {
       var temporaryText = this.posts[i].text
       if(temporaryText.length>100){
-        this.posts[i].text = temporaryText.slice(0,100)+"..."
+        this.posts[i].highlight = temporaryText.slice(0,100)+"..."
       }
     }
   }

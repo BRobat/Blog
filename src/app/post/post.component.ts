@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PostsService } from '../posts.service';
+import { POSTS } from '../mock-posts';
 
 @Component({
   selector: 'app-post',
@@ -9,7 +10,7 @@ import { PostsService } from '../posts.service';
 })
 export class PostComponent implements OnInit {
 
-
+posts = POSTS
 
 
   constructor() { }

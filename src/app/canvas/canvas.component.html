@@ -1,13 +1,16 @@
-<div class="">
+<div class="container">
   <div *ngFor="let post of posts" class="jumbotron col-xl-4 col-lg-4 col-md-6 col-sm-12">
     <div class="text-center title">
       {{post.title}}
     </div>
 
-    <div class="img-thumbnail "> {{post.text}}
+    <div class="img-thumbnail "> 
+      <div class="">{{post.highlight}}</div> 
       <img src="{{post.imgSrc}}" class="img-fluid" alt="">
       <hr>
-      <a href="{{post.link}}" class="btn btn-primary btn-lg"> read more </a>
+      <a routerLink="/post" class="btn btn-primary btn-lg"> read more </a>
+
+      <a routerLink="#">{{post.tags}}</a> 
     </div>
   </div>
 

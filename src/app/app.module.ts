@@ -1,6 +1,9 @@
+import { environment } from './../environments/environment.prod';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router'
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 import { AppComponent } from './app.component';
 import { PostComponent } from './post/post.component';
@@ -15,7 +18,14 @@ import { CanvasComponent } from './canvas/canvas.component';
     CanvasComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
+    RouterModule.forRoot([
+      {path:'post', component: PostComponent},
+      {path:'canvas', component: CanvasComponent}
+      
+    ])
     
   ],
   providers: [],

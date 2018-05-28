@@ -2,7 +2,7 @@ import { POSTS } from './../mock-posts';
 import { PostsService } from './../posts.service';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { AngularFireDatabase} from 'angularfire2/database';
-import { Subscription } from 'rxjs';
+import { Subscription, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-canvas',
@@ -11,11 +11,13 @@ import { Subscription } from 'rxjs';
 })
 export class CanvasComponent implements OnInit {
   
-
+  posts$; //posts subscription can be done with async pipe
   posts: any[]
   subscription: Subscription;
 
   constructor(db: AngularFireDatabase) {
+
+    this.posts$ = db.list('/Posts')
     this.subscription = db.list('/Posts')
     .valueChanges()
     .subscribe(posts => {
@@ -29,7 +31,8 @@ export class CanvasComponent implements OnInit {
 
     // string cutter
 
- 
+
+
 
     /*
     for(var i = 0; i<this.posts.length; i++) {

@@ -9,13 +9,15 @@ import { AppComponent } from './app.component';
 import { PostComponent } from './post/post.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { CanvasComponent } from './canvas/canvas.component';
+import { PublisherComponent } from './publisher/publisher.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PostComponent,
     NavbarComponent,
-    CanvasComponent
+    CanvasComponent,
+    PublisherComponent
   ],
   imports: [
     BrowserModule,
@@ -23,8 +25,8 @@ import { CanvasComponent } from './canvas/canvas.component';
     AngularFireDatabaseModule,
     RouterModule.forRoot([
       {path:'post', component: PostComponent},
-      {path:'canvas', component: CanvasComponent}
-      
+      {path:'canvas', component: CanvasComponent},
+      {path:'publish', component: PublisherComponent}
     ])
     
   ],

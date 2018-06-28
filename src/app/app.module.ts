@@ -9,7 +9,8 @@ import { AppComponent } from './app.component';
 import { PostComponent } from './post/post.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { CanvasComponent } from './canvas/canvas.component';
-import { PublisherComponent } from './publisher/publisher.component';
+import { PostPageComponent } from './post-page/post-page.component';
+
 
 @NgModule({
   declarations: [
@@ -17,16 +18,17 @@ import { PublisherComponent } from './publisher/publisher.component';
     PostComponent,
     NavbarComponent,
     CanvasComponent,
-    PublisherComponent
+    PostPageComponent,
+    
   ],
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     RouterModule.forRoot([
-      {path:'post', component: PostComponent},
-      {path:'canvas', component: CanvasComponent},
-      {path:'publish', component: PublisherComponent}
+      {path:'post/:title', component: PostPageComponent, data: {}},
+      {path:'home', component: CanvasComponent},
+      
     ])
     
   ],

@@ -1,18 +1,3 @@
-<div class="container">
-  <div *ngFor="let post of posts" class="jumbotron">
-    <div class="text-center title">
-      {{post.title}}
-    </div>
-
-    <div class="img-thumbnail "> 
-      <div class="">{{post.highlight}}</div> 
-      <img src="{{post.imgSrc}}" class="img-fluid center" alt="">
-      <hr>
-      <a routerLink="/post" class="btn btn-primary btn-lg"> read more </a>
-
-      <a routerLink="#">{{post.tags}}</a> 
-      <p>{{post.date}}</p>
-    </div>
-  </div>
-
+<div *ngFor="let post of posts" class="post-box">
+  <app-post [post]="post" ></app-post>
 </div>

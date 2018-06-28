@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Post } from './../post';
+import { Component, OnInit, Input } from '@angular/core';
 import { PostsService } from '../posts.service';
-import { POSTS } from '../mock-posts';
 
 @Component({
   selector: 'app-post',
@@ -10,7 +10,8 @@ import { POSTS } from '../mock-posts';
 })
 export class PostComponent implements OnInit {
 
-posts = POSTS
+
+  @Input('post') post: Post;
 
 
   constructor() { }

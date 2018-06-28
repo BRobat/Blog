@@ -1,2 +1,15 @@
-<div *ngFor="let post of posts">
-  {{post.text}}</div>
+<div class="container-box">
+  <div class="text-center text-title">
+    {{post.title}}
+  </div>
+
+  <div class="text-box">
+    <div class="">{{post.highlight}}</div>
+    <img src="{{post.imgSrc}}" class="img-fluid center" alt="">
+    <hr>
+    <a routerLink="/post/{{post.title}}" class="btn btn-primary btn-lg"> read more </a>
+
+    <a routerLink="longPost/:post.key">{{post.tags}}</a>
+    <p>{{post.date}}</p>
+  </div>
+</div>

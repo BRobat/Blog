@@ -4,3 +4,38 @@
 .container{
     margin-top: 50px;
 }
+img {
+    max-height: 500px;
+}
+
+.jumbotron {
+    max-width: 800px;
+
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.container-box {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+
+    color: wheat;
+   
+}
+
+.post-box {
+    margin: 10px;
+    padding: 20px;
+
+    border-radius: 5px;
+
+    background-color: rgb(39, 44, 117);
+    box-shadow: 5px 5px 5px 0px #ccc;
+
+}

@@ -1,12 +1,11 @@
-import { PostsService } from './../posts.service';
+import { PostsService } from '../services/posts.service';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { AngularFireDatabase} from 'angularfire2/database';
 import { Subscription, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-canvas',
-  templateUrl: './canvas.component.html',
-  styleUrls: ['./canvas.component.css']
+  templateUrl: './canvas.component.html'
 })
 export class CanvasComponent {
 

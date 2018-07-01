@@ -3,7 +3,7 @@
 
 
 
-import { Post } from './post'
+import { Post } from './models/post'
 
 
 export const POSTS: Post[] = [

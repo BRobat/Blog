@@ -10,6 +10,7 @@ import { PostComponent } from './post/post.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { CanvasComponent } from './canvas/canvas.component';
 import { PostPageComponent } from './post-page/post-page.component';
+import { AdminPageComponent } from './admin-page/admin-page.component';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { PostPageComponent } from './post-page/post-page.component';
     NavbarComponent,
     CanvasComponent,
     PostPageComponent,
+    AdminPageComponent,
     
   ],
   imports: [

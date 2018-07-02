@@ -12,4 +12,8 @@ export class AdminPageComponent implements OnInit {
   ngOnInit() {
   }
 
+  addPost(title, text) {
+
+  }
+
 }

@@ -1,7 +1,5 @@
-import { PostsService } from '../services/posts.service';
+import { PostsService } from '../../services/posts.service';
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { AngularFireDatabase} from 'angularfire2/database';
-import { Subscription, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-canvas',
@@ -9,22 +7,20 @@ import { Subscription, Observable } from 'rxjs';
 })
 export class CanvasComponent {
 
-  posts$; //posts subscription can be done with async pipe
-  posts: any[]
-  subscription: Subscription;
+  posts;
 
-  constructor(db: AngularFireDatabase) {
+  constructor(private postService: PostsService) {
+    
+  }
+  
 
-    this.posts$ = db.list('/Posts')
-    this.subscription = db.list('/Posts')
-    .valueChanges()
-    .subscribe(posts => {this.posts = posts})
+  ngOnInit() {
+    this.getPosts();
   }
 
-  ngOnInit(): void {
+  getPosts() {
+    this.posts = this.postService.getPosts();
   }
 
-  ngOnDestroy(): void {
-    this.subscription.unsubscribe()
-  }
+
 }

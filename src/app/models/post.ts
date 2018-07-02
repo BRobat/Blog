@@ -1,10 +1,11 @@
 export class Post {
-    id: number;
-    title: string;
-    highlight: string;
-    text: string;
-    imgSrc: string;
-    link: string;
-    date: string;
-    tags: string[];
+    constructor(public id: number,
+        public title: string,
+        public highlight: string,
+        public text: string,
+        public imgSrc: string,
+        public link: string,
+        public date: string,
+        public tags: string[]) 
+        { }
 }

@@ -3,24 +3,24 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'app-canvas',
-  templateUrl: './canvas.component.html'
+  templateUrl: './canvas.component.html',
+  providers: [PostsService]
 })
 export class CanvasComponent {
 
-  posts;
+  posts$;
 
   constructor(private postService: PostsService) {
-    
+    console.log("constructor canvas")
   }
   
-
   ngOnInit() {
-    this.getPosts();
+    console.log("init canvas")
+    this.getPosts()
   }
 
   getPosts() {
-    this.posts = this.postService.getPosts();
+    console.log("get posts canvas")
+    this.posts$ = this.postService.getPosts();
   }
-
-
 }

@@ -11,8 +11,8 @@ import { Observable, of } from 'rxjs';
 })
 export class PostsService {
 
-  postsRef: AngularFireList<any>;
-  posts: Observable<any[]>;
+  postsRef: AngularFireList<Post>;
+  posts: Observable<Post[]>;
 
   constructor(db: AngularFireDatabase) {
     this.postsRef = db.list('/Posts');
@@ -23,7 +23,8 @@ export class PostsService {
   }
 
   getPosts() {
-    return of(this.posts)
+    console.log("hey: ",this.posts)
+    return (this.posts)
   }
 
 

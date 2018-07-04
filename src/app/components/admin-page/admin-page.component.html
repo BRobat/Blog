@@ -1,11 +1,23 @@
 <div>
-  <form>
+  <form (ngSubmit)="submitPost(f)" #f="ngForm">
     <div class="form-group">
-      <input type="text" class="form-control" placeholder="title" id="title" required>
+      <label class="label">
+        title:
+      </label>
+      <input type="text" class="form-control" placeholder="title" id="title" required ngModel name="title">
     </div>
     <div class="form-group">
-      <input type="text" class="form-control" placeholder="text" id="text">
+      <label class="label">
+        text:
+      </label>
+      <input type="text" class="form-control" placeholder="text" id="text" required ngModel name="text">
     </div>
-    <button type="submit" class="btn btn-success" (click)="addPost()">Submit</button>
+    <div class="form-group">
+      <label class="label">
+        date:
+      </label>
+      <input type="date" class="form-control" placeholder="date" id="text" required ngModel name="date">
+    </div>
+    <button type="submit" class="btn btn-success">Submit</button>
   </form>
 </div>

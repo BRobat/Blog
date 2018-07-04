@@ -4,6 +4,7 @@ import { NgModule, Component } from '@angular/core';
 import { RouterModule } from '@angular/router'
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { PostComponent } from './components/post/post.component';
@@ -25,6 +26,7 @@ import { AdminPageComponent } from './components/admin-page/admin-page.component
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     RouterModule.forRoot([

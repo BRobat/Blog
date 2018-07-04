@@ -1,4 +1,6 @@
+import { PostsService } from './../../services/posts.service';
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-admin-page',
@@ -7,12 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private postService: PostsService) { }
 
   ngOnInit() {
   }
 
-  addPost(title, text) {
+  submitPost(form: NgForm) {
+    console.log(form.value)
+    this.postService.addPost(form.value);
 
   }
 

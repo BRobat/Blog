@@ -1,11 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.css";
 
-.container{
-    margin-top: 50px;
+body {
+    background-color: rgb(83, 83, 83);
 }
+
 img {
     max-height: 500px;
+}
+
+nav {
+    box-shadow: 0px 5px 5px 0px rgb(38, 38, 43);
+}
+
+.container-box:hover {
+    color: white;
+    text-decoration: none;
+}
+
+.container{
+    
 }
 
 .jumbotron {
@@ -25,7 +39,8 @@ img {
     flex-wrap: wrap;
     justify-content: flex-start;
 
-    color: wheat;
+    font-family: Arial, Helvetica, sans-serif!important;
+    color: white;
    
 }
 
@@ -35,7 +50,19 @@ img {
 
     border-radius: 5px;
 
-    background-color: rgb(39, 44, 117);
-    box-shadow: 5px 5px 5px 0px #ccc;
+    background-color: rgb(52, 57, 64);
+    box-shadow: 5px 5px 5px 0px rgb(38, 38, 43);
 
+}
+
+.text-title {
+    font-family: 'Lato', sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.text-box {
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
 }

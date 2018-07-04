@@ -1,11 +1,11 @@
 <a routerLink="/post/{{post.title}}" class="container-box">
   <div class="text-box">
-    <div class="text-center text-title">
+    <div class="text-title">
       {{post.title}}
     </div>
     <div class="">{{post.text}}</div>
     <img src="{{post.imgSrc}}" class="img-fluid center" alt="">
     <hr>
-    <p>{{post.date}}</p>
+    <p class="text-date">{{post.date | date}}</p>
   </div>
 </a>

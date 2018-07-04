@@ -16,8 +16,6 @@ export class AdminPageComponent implements OnInit {
 
   submitPost(form: NgForm) {
     console.log(form.value)
-    this.postService.addPost(form.value);
-
+    this.postService.addPost(form.value, form.valid);
   }
-
 }

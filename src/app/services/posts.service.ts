@@ -27,13 +27,17 @@ export class PostsService {
     return (this.posts)
   }
 
-  addPost(data) {
-    console.log(data);
-    let newPost = new Post(data.title, 
-      data.text, 
-      "", 
-      data.date);
-
-    this.postsRef.push(newPost)
+  addPost(data, isValid) {
+    if (isValid) {
+      console.log(data);
+      let newPost = new Post(data.title, 
+        data.text, 
+        "", 
+        String(Date.now())
+      );
+  
+      this.postsRef.push(newPost)
+    }
+    
   }
 }
